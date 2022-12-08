@@ -8,6 +8,7 @@ public class PoststationTest {
         Fahrrad fahrrad4 = new Fahrrad(2, 19);
         Fahrrad fahrrad5 = new Fahrrad(5, 14);
 
+
         Fahrrad fahrrad6 = new Fahrrad(1, 32);
         Fahrrad fahrrad7 = new Fahrrad(2, 19);
         Fahrrad fahrrad8 = new Fahrrad(5, 14);
