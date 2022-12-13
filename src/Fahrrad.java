@@ -5,8 +5,7 @@ public class Fahrrad extends Fahrradgruppe {
     private int maxSpeed;
 
 
-    public Fahrrad(int ladung, int maxSpeed) {
-        this.ladung = ladung;
+    public Fahrrad(int maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
 
@@ -29,9 +28,15 @@ public class Fahrrad extends Fahrradgruppe {
         return ladung;
     }
 
+    public void setLadung(int ladung) {
+        this.ladung = ladung;
+    }
+
     public int getMaxSpeed() {
         return maxSpeed;
     }
 
-
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
 }

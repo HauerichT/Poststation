@@ -1,36 +1,29 @@
 public class PoststationTest {
     public static void main(String[] args) {
 
-        Fahrrad fahrrad1 = new Fahrrad(3, 22);
-        Fahrrad fahrrad2 = new Fahrrad(5, 30);
-
-        Fahrrad fahrrad3 = new Fahrrad(1, 32);
-        Fahrrad fahrrad4 = new Fahrrad(2, 19);
-        Fahrrad fahrrad5 = new Fahrrad(5, 14);
-
-
-        Fahrrad fahrrad6 = new Fahrrad(1, 32);
-        Fahrrad fahrrad7 = new Fahrrad(2, 19);
-        Fahrrad fahrrad8 = new Fahrrad(5, 14);
-        Fahrrad fahrrad9 = new Fahrrad(5, 14);
-
+        Fahrrad fahrrad1 = new Fahrrad(10);
+        Fahrrad fahrrad2 = new Fahrrad(20);
+        Fahrrad fahrrad3 = new Fahrrad(30);
 
         Fahrradgruppe fahrradgruppe1 = new Fahrradgruppe();
         fahrradgruppe1.addFahrrad(fahrrad1);
         fahrradgruppe1.addFahrrad(fahrrad2);
+        fahrradgruppe1.addFahrrad(fahrrad3);
 
-        Fahrradgruppe fahrradgruppe2 = new Fahrradgruppe();
-        fahrradgruppe2.addFahrrad(fahrrad3);
-        fahrradgruppe2.addFahrrad(fahrrad4);
-        fahrradgruppe2.addFahrrad(fahrrad5);
+        System.out.println("Fahrrad-Geschwindigkeiten ohne Ladung: ");
+        System.out.println("Fahrrad 1: " + fahrrad1.speed());
+        System.out.println("Fahrrad 2: " + fahrrad2.speed());
+        System.out.println("Fahrrad 3: " + fahrrad3.speed());
+        System.out.println("Reisegeschwindigkeit: " + fahrradgruppe1.reisegeschwindigkeit());
 
-        Fahrradgruppe fahrradgruppe3 = new Fahrradgruppe();
-        fahrradgruppe3.addFahrrad(fahrrad6);
-        fahrradgruppe3.addFahrrad(fahrrad7);
-        fahrradgruppe3.addFahrrad(fahrrad8);
-        fahrradgruppe3.addFahrrad(fahrrad9);
+        int ladung = 35;
+        fahrradgruppe1.addLadung(ladung);
 
-
+        System.out.println("\nFahrrad-Geschwindigkeiten mit einer Ladung von " + ladung + ":");
+        System.out.println("Fahrrad 1: " + fahrrad1.speed());
+        System.out.println("Fahrrad 2: " + fahrrad2.speed());
+        System.out.println("Fahrrad 3: " + fahrrad3.speed());
+        System.out.println("Reisegeschwindigkeit: " + fahrradgruppe1.reisegeschwindigkeit());
 
     }
 }
