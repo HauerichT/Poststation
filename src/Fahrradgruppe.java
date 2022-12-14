@@ -33,29 +33,31 @@ public class Fahrradgruppe {
         if (anzahl <= 0) {
             System.out.println("Anzahl muss größer als 0 sein.");
         }
+        else {
+            Fahrrad aktFahrrad = this.startFahrrad;
+            Fahrrad maxFahrrad = this.startFahrrad;
 
-        Fahrrad aktFahrrad = this.startFahrrad;
-        Fahrrad maxFahrrad = this.startFahrrad;
-
-        // iteriert über die Anzahl
-        for (int i = 1; i <= anzahl; i++) {
-            // iteriert über die Fahrräder
-            while (aktFahrrad.getNext() != null) {
-                // setzt das nächste Fahrrad
-                aktFahrrad = aktFahrrad.getNext();
-                // prüft, ob das jetzige Fahrrad schneller als das nächste ist
-                if (maxFahrrad.speed() < aktFahrrad.speed()) {
-                    maxFahrrad = aktFahrrad;
+            // iteriert über die Anzahl
+            for (int i = 1; i <= anzahl; i++) {
+                // iteriert über die Fahrräder
+                while (aktFahrrad.getNext() != null) {
+                    // setzt das nächste Fahrrad
+                    aktFahrrad = aktFahrrad.getNext();
+                    // prüft, ob das jetzige Fahrrad schneller als das nächste ist
+                    if (maxFahrrad.speed() < aktFahrrad.speed()) {
+                        maxFahrrad = aktFahrrad;
+                    }
                 }
+
+                // setzt die Ladung
+                maxFahrrad.setLadung(maxFahrrad.getLadung()+1);
+
+                // setzt die Fahrräder zurück
+                aktFahrrad = this.startFahrrad;
+                maxFahrrad = this.startFahrrad;
             }
-
-            // setzt die Ladung
-            maxFahrrad.setLadung(maxFahrrad.getLadung()+1);
-
-            // setzt die Fahrräder zurück
-            aktFahrrad = this.startFahrrad;
-            maxFahrrad = this.startFahrrad;
         }
+
     }
 
 }

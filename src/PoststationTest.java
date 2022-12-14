@@ -22,7 +22,7 @@ public class PoststationTest {
         System.out.println("Reisegeschwindigkeit: " + fahrradgruppe1.reisegeschwindigkeit());
 
         // hinzufügen der Ladung
-        int ladung = 35;
+        int ladung = 6;
         fahrradgruppe1.addLadung(ladung);
 
         // Ausgabe der Fahrradgeschwindigkeiten mit Ladung
