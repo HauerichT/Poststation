@@ -3,7 +3,7 @@ public class Fahrrad extends Fahrradgruppe {
     // Instanzvariablen
     private Fahrrad next = null;
     private int ladung;
-    private int maxSpeed;
+    private final int maxSpeed;
 
     // Konstruktor
     public Fahrrad(int maxSpeed) {
@@ -18,6 +18,7 @@ public class Fahrrad extends Fahrradgruppe {
         return 0;
     }
 
+    // set- und get-Methoden
     public Fahrrad getNext() {
         return next;
     }
@@ -34,11 +35,4 @@ public class Fahrrad extends Fahrradgruppe {
         this.ladung = ladung;
     }
 
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
-    }
 }

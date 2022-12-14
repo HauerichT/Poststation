@@ -2,7 +2,6 @@ public class Fahrradgruppe {
 
     // Instanzvariablen
     private Fahrrad startFahrrad = null;
-    private int langsamsteGeschwindigkeit = 0;
 
     // Methode setzt nächstes Fahrrad
     public void addFahrrad(Fahrrad f) {
@@ -59,19 +58,4 @@ public class Fahrradgruppe {
         }
     }
 
-    public void setStartFahrrad(Fahrrad startFahrrad) {
-        this.startFahrrad = startFahrrad;
-    }
-
-    public Fahrrad getStartFahrrad() {
-        return startFahrrad;
-    }
-
-    public void setLangsamsteGeschwindigkeit(int langsamsteGeschwindigkeit) {
-        this.langsamsteGeschwindigkeit = langsamsteGeschwindigkeit;
-    }
-
-    public int getLangsamsteGeschwindigkeit() {
-        return langsamsteGeschwindigkeit;
-    }
 }
