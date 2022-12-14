@@ -1,42 +1,60 @@
 public class Fahrradgruppe {
 
+    // Instanzvariablen
     private Fahrrad startFahrrad = null;
+    private int langsamsteGeschwindigkeit = 0;
 
-    int langsamsteGeschwindigkeit = 0;
-
+    // Methode setzt nächstes Fahrrad
     public void addFahrrad(Fahrrad f) {
         f.setNext(startFahrrad);
         this.startFahrrad = f;
     }
 
+    // Methode berechnet die Reisegeschwindigkeit und gibt diese aus
     public int reisegeschwindigkeit() {
-        Fahrrad langsamstesFahrrad = this.startFahrrad;
-        int speed = langsamstesFahrrad.speed();
-        while (langsamstesFahrrad.getNext() != null) {
-            langsamstesFahrrad = langsamstesFahrrad.getNext();
-            if (speed > langsamstesFahrrad.speed()) {
-                speed = langsamstesFahrrad.speed();
+        Fahrrad aktFahrrad = this.startFahrrad;
+        // Reisegeschwindigkeit des aktuellen Fahrrads
+        int reisegeschwindigkeit = aktFahrrad.speed();
+        // iteriert über die Fahrräder
+        while (aktFahrrad.getNext() != null) {
+            // setzt das nächste Fahrrad
+            aktFahrrad = aktFahrrad.getNext();
+            // prüft, ob das jetzige Fahrrad schneller als das nächste ist
+            if (reisegeschwindigkeit > aktFahrrad.speed()) {
+                reisegeschwindigkeit = aktFahrrad.speed();
             }
         }
-        return speed;
+        // gibt die Reisegeschwindigkeit zurück
+        return reisegeschwindigkeit;
     }
 
+    // Methode fügt Ladung hinzu und teilt diese auf die Fahrräder auf
     public void addLadung(int anzahl) {
+        // prüft, ob Anzahl größer als 0 ist
         if (anzahl <= 0) {
-            System.out.println("Fehler");
+            System.out.println("Anzahl muss größer als 0 sein.");
         }
 
-        Fahrrad langsamstesFahrrad = this.startFahrrad;
+        Fahrrad aktFahrrad = this.startFahrrad;
         Fahrrad maxFahrrad = this.startFahrrad;
+
+        // iteriert über die Anzahl
         for (int i = 1; i <= anzahl; i++) {
-            while (langsamstesFahrrad.getNext() != null) {
-                langsamstesFahrrad = langsamstesFahrrad.getNext();
-                if (maxFahrrad.speed() < langsamstesFahrrad.speed()) {
-                    maxFahrrad = langsamstesFahrrad;
+            // iteriert über die Fahrräder
+            while (aktFahrrad.getNext() != null) {
+                // setzt das nächste Fahrrad
+                aktFahrrad = aktFahrrad.getNext();
+                // prüft, ob das jetzige Fahrrad schneller als das nächste ist
+                if (maxFahrrad.speed() < aktFahrrad.speed()) {
+                    maxFahrrad = aktFahrrad;
                 }
             }
+
+            // setzt die Ladung
             maxFahrrad.setLadung(maxFahrrad.getLadung()+1);
-            langsamstesFahrrad = this.startFahrrad;
+
+            // setzt die Fahrräder zurück
+            aktFahrrad = this.startFahrrad;
             maxFahrrad = this.startFahrrad;
         }
     }

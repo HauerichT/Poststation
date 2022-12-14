@@ -1,14 +1,16 @@
 public class Fahrrad extends Fahrradgruppe {
 
+    // Instanzvariablen
     private Fahrrad next = null;
     private int ladung;
     private int maxSpeed;
 
-
+    // Konstruktor
     public Fahrrad(int maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
 
+    // berechnet den speed abzüglich der Ladung
     public int speed() {
         if (ladung < maxSpeed) {
             return this.maxSpeed - ladung;
